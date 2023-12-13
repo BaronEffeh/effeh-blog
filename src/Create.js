@@ -51,10 +51,10 @@ const Create = () => {
                         <option value="effeh">Effeh</option>
                     </select>
                     {!isPending && <button>Add Blog</button>}
-                    {isPending && <button>Adding blog...</button>}
-                    <p>{title}</p>
-                    <p>{body}</p>
-                    <p>{author}</p>
+                    {isPending && <button disabled>Adding blog...</button>}
+                    {/* <p>{title}</p> */}
+                    {/* <p>{body}</p> */}
+                    {/* <p>{author}</p> */}
                 </label>
             </form>
         </div>

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom/cjs/rea
 import Create from './Create';
 import BlogDetails from './BlogDetails';
 import NotFound from './NotFound';
+import UpdateForm from './UpdateForm';
 
 function App() {
   // const title = 'Welcom to the new blog';
@@ -22,6 +23,9 @@ function App() {
             </Route>
             <Route path="/blogs/:id">
               <BlogDetails />
+            </Route>
+            <Route path="/blogs/:id">
+              <UpdateForm />
             </Route>
             <Route path="*">
               <NotFound />

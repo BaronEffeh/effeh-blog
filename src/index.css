@@ -8,12 +8,17 @@
 }
 
 .navbar {
+  overflow: hidden;
+  top: 0;
   padding: 20px;
   display: flex;
   align-items: center;
   max-width: 600px;
   margin: 0 auto;
-  border-bottom: 1px solid #f2f2f2;
+  /* margin-bottom: 1px; */
+  border-bottom: 3px solid #f2f2f2;
+  position: sticky;
+  background-color: #f0f0f0;
 }
 
 .navbar h1 {
@@ -112,6 +117,37 @@
 
 .create button {
   background: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Update existing blog */
+.update-form {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.update-form input,
+.update-form textarea,
+.update-form select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+
+.update-form textarea {
+  height: 150px;
+}
+
+.update-form button {
+  background: #499eeeea;
   color: #fff;
   border: 0;
   padding: 8px;
