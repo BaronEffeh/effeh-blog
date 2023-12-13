@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-const UpdateForm = ({ blog }) => {
+const UpdateForm = ({ blog, onUpdate }) => {
     const [newTitle, setNewTitle] = useState(blog.title);
     const [newBody, setNewBody] = useState(blog.body);
     const [isPending, setIsPending] = useState(false);
     const history = useHistory();
 
     const handleUpdate = () => {
-
         setIsPending(true);
 
         fetch('http://localhost:8000/blogs/' + blog.id, {
@@ -18,11 +17,15 @@ const UpdateForm = ({ blog }) => {
             },
             body: JSON.stringify({ title: newTitle, body: newBody }),
         })
-            .then(() => {
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to update the blog');
+                }
                 setIsPending(false);
                 history.push("/");
             })
             .catch(error => {
+                setIsPending(false);
                 console.error('Error updating blog:', error);
             });
     }

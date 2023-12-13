@@ -7,18 +7,22 @@
   color: #333;
 }
 
+body {
+  background-color: #c7c5c5;
+}
+
 .navbar {
   overflow: hidden;
   top: 0;
   padding: 20px;
   display: flex;
   align-items: center;
-  max-width: 600px;
+  max-width: 900px;
   margin: 0 auto;
   /* margin-bottom: 1px; */
   border-bottom: 3px solid #f2f2f2;
   position: sticky;
-  background-color: #f0f0f0;
+  background-color: #b1afaf;
 }
 
 .navbar h1 {
@@ -40,7 +44,7 @@
 }
 
 .content {
-  max-width: 600px;
+  max-width: 900px;
   margin: 40px auto;
   padding: 20px;
 }
