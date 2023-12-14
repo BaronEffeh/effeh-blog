@@ -71,6 +71,10 @@ body {
 }
 
 /* blog details page */
+.blog-details {
+  text-align: justify;
+}
+
 .blog-details h2 {
   font-size: 20px;
   color: #f1356d;

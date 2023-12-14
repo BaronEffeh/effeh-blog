@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 const UpdateForm = ({ blog, onUpdate }) => {
     const [newTitle, setNewTitle] = useState(blog.title);
     const [newBody, setNewBody] = useState(blog.body);
+    const [newAuthor, setNewAuthor] = useState(blog.author);
     const [isPending, setIsPending] = useState(false);
     const history = useHistory();
 
@@ -15,7 +16,7 @@ const UpdateForm = ({ blog, onUpdate }) => {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ title: newTitle, body: newBody }),
+            body: JSON.stringify({ title: newTitle, body: newBody, author: newAuthor }),
         })
             .then(response => {
                 if (!response.ok) {
@@ -37,6 +38,13 @@ const UpdateForm = ({ blog, onUpdate }) => {
             <input type="text" value={newTitle} onChange={(e) => setNewTitle(e.target.value)} />
             <label>New Body:</label>
             <textarea value={newBody} onChange={(e) => setNewBody(e.target.value)}></textarea>
+            <select
+                value={newAuthor}
+                onChange={(e) => setNewAuthor(e.target.value)}
+            >
+                <option value="baron">Bron</option>
+                <option value="effeh">Effeh</option>
+            </select>
             {!isPending && <button onClick={handleUpdate}>Update</button>}
             {isPending && <button onClick={handleUpdate}>Updating...</button>}
         </div>

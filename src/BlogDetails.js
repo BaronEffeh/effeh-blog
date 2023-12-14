@@ -57,7 +57,7 @@ const BlogDetails = () => {
                     <h2>{blog.title}</h2>
                     <p>Written by {blog.author}</p>
                     <div>{blog.body}</div>
-                    <button onClick={handleDelete}>delete</button>
+                    <button onClick={handleDelete}>Delete</button>
                     <button onClick={handleShowUpdateForm}>Edit</button>
                 </article>
             )}
